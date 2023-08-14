@@ -1,0 +1,64 @@
+
+.btn-group button {
+    background-color: white;
+    padding: 15px 15px 15px 15px;
+    border-color: white;
+    border-radius: 16px;
+    border-width: 4px;
+    margin: 10px;
+    font-size: 20px;
+    width: 200px;
+    font-family: roboto, sans-serif;
+
+}
+
+.btn-group button:hover {
+    background-color: blue;
+}
+
+.btn-group {
+    font-family:roboto, sans serif;
+}
+
+.landingimage {
+    position: relative;
+    text-align: center;
+    color: black;
+    max-width: 100%
+}
+
+.logo {
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75%;
+
+}
+
+.spinner-container {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.spinner {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.result-container {
+    font-family: roboto, sans-serif;
+}
+
+.selectedResult {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
