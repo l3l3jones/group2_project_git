@@ -1,6 +1,11 @@
 from flask import Flask, render_template, request, jsonify
 import requests
-from utils import get_genres, extract_movie_data
+from utils import (
+    get_genres,
+    extract_movie_data,
+    get_movies_by_keyword,
+    get_movies_by_genre,
+)
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -27,37 +32,29 @@ def search_movies():
     print(f"Keyword: {keyword}")
     print(f"Genre: {genre}")
 
-    if keyword:
+    if keyword and genre:
 
-        url = f"https://api.themoviedb.org/3/search/keyword?api_key={api_key}&query={keyword}"
+        # still need to get working
+        movies = get_movies_by_keyword(keyword)
+        filtered_movies = []
+        for movie in movies:
+            # print(movie["genre_ids"])
+            for genre in movie["genre_ids"]:
+                # print(type(id))
+                # print(type(genre))
+                if genre == str(id):
+                    # print("yes")
+                    filtered_movies.append(movie)
 
-        response = requests.get(url)
-        data = response.json()
+        print(filtered_movies)
 
-        keyword_id = data["results"][0]["id"]
+    elif keyword:
 
-        url = f"https://api.themoviedb.org/3/discover/movie?api_key={api_key}&with_keywords={keyword_id}"
-
-        response = requests.get(url)
-        movies = response.json()["results"]
-
-        return movies
+        return get_movies_by_keyword(keyword)
 
     elif genre:
 
         return get_movies_by_genre(genre)
-
-
-@app.route("/movies/genre/<string:genre>")
-def get_movies_by_genre(genre):
-    url = f"https://api.themoviedb.org/3/discover/movie?api_key={api_key}&with_genres={genre}"
-
-    response = requests.get(url)
-    data = response.json()["results"]
-
-    # movie_data = extract_movie_data(data)
-
-    return jsonify(data)
 
 
 @app.route("/now_playing")
