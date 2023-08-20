@@ -5,6 +5,7 @@ from utils import (
     extract_movie_data,
     get_movies_by_keyword,
     get_movies_by_genre,
+    filter_movies_by_genre,
 )
 from flask_cors import CORS
 
@@ -29,24 +30,13 @@ def get_movies():
 def search_movies():
     keyword = request.args.get("keyword")
     genre = request.args.get("genre")
-    print(f"Keyword: {keyword}")
-    print(f"Genre: {genre}")
 
     if keyword and genre:
 
-        # still need to get working
         movies = get_movies_by_keyword(keyword)
-        filtered_movies = []
-        for movie in movies:
-            # print(movie["genre_ids"])
-            for genre in movie["genre_ids"]:
-                # print(type(id))
-                # print(type(genre))
-                if genre == str(id):
-                    # print("yes")
-                    filtered_movies.append(movie)
+        filtered = filter_movies_by_genre(movies, genre)
 
-        print(filtered_movies)
+        return filtered
 
     elif keyword:
 

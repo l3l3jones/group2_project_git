@@ -62,3 +62,15 @@ def get_movies_by_genre(genre):
     # movie_data = extract_movie_data(data)
 
     return data
+
+
+def filter_movies_by_genre(movies, genre):
+    filtered_movies = []
+    for movie in movies:
+
+        for i in movie["genre_ids"]:
+            # convert to string for comparison
+            if genre == str(i):
+                filtered_movies.append(movie.copy())
+
+    return filtered_movies
