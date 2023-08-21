@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Movie App</title>
+    <title>Seen it!</title>
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
     <h2>Seen it!</h2>
     <div class="search-container">
-    <input type="text" id="searchBar" placeholder="Search for movies...">
-        <div class="toggle-container">
-    <input type="checkbox" id="nowPlayingToggle" class="toggle-checkbox">
-    <label for="nowPlayingToggle" class="toggle-label">Now Playing in Cinema</label>
+    <input type="text" id="search-bar" placeholder="Search movies...">
+        <div class="now-playing-container">
+    <input type="checkbox" id="nowPlayingCheckbox">
+    <label for="nowPlayingCheckbox" class="now-playing-label">Now Playing in Cinema</label>
         </div>
     <select id="decadeDropdown">
+        <option value="">All Decades</option>
         <option value="2020">2020s</option>
         <option value="2010">2010s</option>
         <option value="2000">2000s</option>
@@ -30,7 +31,7 @@
     <select id="genreDropdown">
     </select>
 
-    <button onclick="searchMoviesByDecade()">Search</button>
+    <button onclick="searchMovies()">Search</button>
 
   </div>
     <div id="movieGrid"></div>

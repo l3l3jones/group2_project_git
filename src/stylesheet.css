@@ -3,13 +3,13 @@
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 10px;
-    background-color: #f4f4f4;
+    background-color: cream;
 }
 
 .movie {
-    border: 1px solid #ccc;
+    border: 1px solid light-grey;
     padding: 10px;
-    width: 300px;
+    width: 270px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -21,18 +21,22 @@
 
 .search-container {
     display: flex;
-    width: 800px;
+    width: 80%;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: #2c3e50;
-    color: #ecf0f1;
+    background: #800020;
+    color: cream
+}
+
+.overview {
+    color: grey;
 }
 
 
-#searchBar {
-    padding: 10px 15px;
-    font-size: 1em;
+#search-bar {
+    padding: 15px 15px;
+    font-size: 16px;
     border: none;
     border-radius: 5px 0 0 5px;
     outline: none;
@@ -41,45 +45,45 @@
 
 #decadeDropdown, #genreDropdown {
     padding: 10px;
-    font-size: 1em;
+    font-size: 16px;
     border: none;
-    border-left: 1px solid #ecf0f1;
-    border-radius: 0px 0 0 5px;
+    border-left: 1px solid grey;
+    border-radius: 2px;
     outline: none;
     flex: 1;
+    background: cream
 }
 
 
 button {
     padding: 10px 20px;
-    font-size: 1em;
+    font-size: 15px;
     border: none;
     border-radius: 0 5px 5px 0;
-    background-color: #e74c3c;
-    color: #fff;
+    background-color: #FF8C00;
+    color: white;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
 button:hover {
-    background-color: #c0392b;
+    background-color: #FF7F00;
 }
 
-.toggle-container {
+.now-playing-container{
     display: inline-flex;
     align-items: center;
     cursor: pointer;
 }
 
-.toggle-checkbox {
-    margin-right: 10px;
-    cursor: pointer;
+#nowPlayingCheckbox {
     height: 20px;
     width: 20px;
 }
 
-.toggle-label {
-    font-weight: 500;
+.now-playing-label {
+    font-weight: 450;
+    font-size: 1em;
     color: white;
     user-select: none;
     padding-right: 10px;
