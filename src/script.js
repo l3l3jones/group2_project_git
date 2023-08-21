@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
     .catch(error => console.error('Error getting movies:', error));
 });
 
+loadGenres();
 
 function displayMovies(movies) {
     let movieGrid = document.getElementById('movieGrid');
@@ -26,7 +27,7 @@ function displayMovies(movies) {
         movie_div.appendChild(title);
 
         let overview = document.createElement('p');
-        overview.innerText = movie.overview.substring(0, 100);
+        overview.innerText = movie.overview;
         movie_div.appendChild(overview);
         overview.className = 'overview';
 
@@ -55,7 +56,6 @@ function loadGenres() {
     });
 }
 
-loadGenres();
 
 function searchMovies() {
     let query = document.getElementById('search-bar').value;
@@ -86,6 +86,7 @@ function searchMovies() {
         console.error('Error fetching movies:', error);
     });
 }
+
 document.getElementById('search-bar').addEventListener('keyup', function(event) {
 
     if (event.key === 'Enter') {
