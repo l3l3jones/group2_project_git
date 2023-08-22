@@ -59,7 +59,7 @@ The target audience for Seenit! is...
 
 #### __First Time Visitor__
 
-As a first time user of the site I want to be able to:
+As a first time user of the site we want to be able to:
 
 * Search for movie recommendations based on genre.
 * Search for movie recommendations based on decade released.
@@ -68,7 +68,7 @@ As a first time user of the site I want to be able to:
 
 #### __Returning Visitor__
 
-As a returning user of the site I want to be able to use the app in the same way in which a first time user interacts with the app.
+As a returning user of the site we want to be able to use the app in the same way in which a first time user interacts with the app.
 
 - - -
 
@@ -76,19 +76,19 @@ As a returning user of the site I want to be able to use the app in the same way
 
 ### Colour Scheme
 
-I have taken inspiration from...
+We took inspiration from...
 
 ### Typography
 
 Google Fonts was used to import the chosen fonts for use in the site.
 
-I have used [FONT NAME](https://www.link-to-google-font-if-applicable.com) for the headings on the site. I have chosen to use this font as...
+We used [FONT NAME](https://www.link-to-google-font-if-applicable.com) for the headings on the site. We chose to use this font as...
 
-I have used [FONT NAME](https://www.link-to-google-font-if-applicable.com) for the body text on the site. FONT NAME is a sans-serif font which allows it to be legible and is a great choice for accessibility.
+We used [FONT NAME](https://www.link-to-google-font-if-applicable.com) for the body text on the site. FONT NAME is a sans-serif font which allows it to be legible and is a great choice for accessibility.
 
 ### Imagery
 
-As the site is for people who love to watch movies, I have kept the imagery throughout the site to the theme of movies. Please view the media section for more information on where each image was sourced.
+As the site is for people who love to watch movies, we kept the imagery throughout the site to the theme of movies. Please view the media section for more information on where each image was sourced.
 
 All images of the movies have been requested through the MOVIES API.
 
@@ -105,12 +105,12 @@ Wireframes were created using NAME.
 
 ### Future Implementations
 
-In future implementations I would like to:
+In future implementations we would like to:
 
 * Be able to create user profiles so that data and movie recommendations can be saved.
 * Add change and reset password functionality to the profile section.
 * Give users the option to delete their account in the profile section.
-* Be able to give showtimes and locations of cinemas for movies shoing in theatres.
+* Be able to give showtimes and locations of cinemas for movies showing in theatres.
 
 ### Accessibility - THIS CAN BE REMOVED IF NEEDED
 
@@ -232,7 +232,7 @@ To clone the repository:
 
 Content for this project was written by Leah Jones, Dana Ciobotaru, Phoebe Cowan, Ella Rees, Anni Sutt and Delyth Jennings. 
 
-The film descriptions, images, rating and streaming services information were provided throughthe movie API.
+The film descriptions, images, rating and streaming services information were provided through the movie API.
 
 ### Media
 ***INCLUDE ANY WEBSITES OF IMAGES/CLIPS used here***
@@ -242,9 +242,9 @@ The film descriptions, images, rating and streaming services information were pr
 
 ### Acknowledgments
 
-I would like to acknowledge the following people who helped me along the way in completing this project:
+We would like to acknowledge the following people who helped us along the way in completing this project:
 
-* My family for their patience while I worked on this project.
-* Hamed Pour and Jack Jorgensen for being excellent instructurs on the CFG Degree course.
-* Fatihah and Abilash - the assistant instructors on our course for all the feedback on the homework and assessments.
-* Hope - our project instructor for your help during the last few weeks of the course.
+* Our families for their patience while we worked on this project.
+* Hamed Pour and Jack Jorgensen for being excellent instructors on the CFG Degree course.
+* Fatihah and Abilash - the assistant instructors on our course for all the feedback on the homework and assessments, which in turn, helped us progress with our learning.
+* Hope - our project instructor for her help during the last few weeks of the course.
