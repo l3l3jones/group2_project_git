@@ -21,6 +21,7 @@
 
 .search-container {
     display: flex;
+    margin-left: 30px;
     width: 80%;
     justify-content: center;
     align-items: center;
@@ -36,13 +37,15 @@
 
 }
 
+#logo-picture {
+    margin:0
+}
 
 #search-bar {
     padding: 15px 15px;
     font-size: 16px;
     border: none;
     border-radius: 5px 0 0 5px;
-    outline: none;
     flex: 2;
 }
 
@@ -52,7 +55,6 @@
     border: none;
     border-left: 1px solid grey;
     border-radius: 2px;
-    outline: none;
     flex: 1;
     background: cream
 }
@@ -88,7 +90,6 @@ button:hover {
     font-weight: 450;
     font-size: 1em;
     color: white;
-    user-select: none;
     padding-right: 10px;
 }
 
