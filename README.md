@@ -165,11 +165,11 @@ HTML, CSS, Javascript, Python
 
 ### Movies API - NEEDS EDITING
 
-I have used the Google Books API to allow users of the site to search for books.
+We have used the  OVIES API to allow users of the site to search for movie recommendations based on various searches.
 
-I made use of the NAME API [documentation](https://MOVIESAPIWEBSITE.COM) to learn how to fetch data from the API. The documentation also allowed me to amend my request to only fetch the fields I plan to use on my site. This reduces the amount of data returned to me and will speed up server processing.
+We made use of the NAME API [documentation](https://MOVIESAPIWEBSITE.COM) to learn how to fetch data from the API. The documentation also allowed us to amend our request to only fetch the fields we plan to use on the site. This reduces the amount of data returned and will speed up server processing.
 
-As I am only using the API to search for...  the requests to the API contain my API key, the search term the user has created and the fields that I would like to be returned. I have chosen to only receive the movie title, actors, genre, description and thumbnail of the movie. I have set up the API request to ask for 30 results maximum.
+As we am only using the API to search for...  the requests to the API contain the API key, the search term the user has created and the fields that we would like to be returned. We have chosen to only receive the movie title, actors, genre, description and thumbnail of the movie. We have set up the API request to ask for X results as a maximum.
 
 ### Error Handling - DOES THIS NEED TO BE INCLUDED?
 
