@@ -1,5 +1,3 @@
-# Seenit!
-
 ![Welcome to Seenit!](src/logopic.jpg)
 
 Seenit! was created as the group project requirement for the Code First Girls Degree - Summer 2023 Software Stream Cohort.
@@ -172,7 +170,7 @@ To clone the repository:
 
 6. Set up a virtual environment.
 
-7. Install the packages from the requirements.txt file by running the following command in the Terminal:
+7. Install the packages from the requirements.txt file by running the following command in the Terminal (use pip insread of pip 3 if running Python 2):
 
     ```bash
     pip3 install -r requirements.txt
@@ -185,6 +183,12 @@ Using your IDE (PyCharm, or any IDE that you are using) in the Python terminal, 
 pip install flask
 pip install flask-cors
 pip install requests
+```
+If you are running Python 3 then type int he folloing commands instead:
+```
+pip3 install flask
+pip3 install flask-cors
+pip3 install requests
 ```
 
 In the IDE (Pycharm) - right-click on index.html and navigate to Open in Broswer. 
