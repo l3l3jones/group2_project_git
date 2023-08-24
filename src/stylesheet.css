@@ -1,0 +1,100 @@
+#movieGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+    background-color: cream;
+}
+
+.movie {
+    border: 1px solid light-grey;
+    padding: 10px;
+    width: 270px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movie img {
+    width: 100%;
+    height: auto;
+}
+
+
+.search-container {
+    display: flex;
+    margin-left: 30px;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #800020;
+    color: cream
+}
+
+.overview {
+    color: grey;
+    height: 60px;
+    overflow: auto;
+
+}
+
+#logo-picture {
+    margin:0
+}
+
+#search-bar {
+    padding: 15px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    flex: 2;
+}
+
+#decadeDropdown, #genreDropdown {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-left: 1px solid grey;
+    border-radius: 2px;
+    flex: 1;
+    background: cream
+}
+
+
+button {
+    padding: 10px 20px;
+    font-size: 15px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #FF8C00;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #FF7F00;
+}
+
+.now-playing-container{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#nowPlayingCheckbox {
+    height: 20px;
+    width: 20px;
+}
+
+.now-playing-label {
+    font-weight: 450;
+    font-size: 1em;
+    color: white;
+    padding-right: 10px;
+}
+
+
+
+
+
+
