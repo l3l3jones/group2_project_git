@@ -1,6 +1,6 @@
 # Seenit!
 
-![Welcome to Seenit!](documentation/image1.png)
+![Welcome to Seenit!](logopic.jpg)
 
 Seenit! was created as the group project requirement for the Code First Girls Degree - Summer 2023 Software Stream Cohort.
 
@@ -11,26 +11,21 @@ Seenit! was created as the group project requirement for the Code First Girls De
   * [User Stories](#user-stories)
 
 * [Design](#design)
-  * [Colour Scheme](#colour-scheme)
-  * [Typography](#typography)
   * [Imagery](#imagery)
   * [Wireframes](#wireframes)
 
-* [Features](#features)
-  * [Elements Fount on Each Page](#elements-found-on-each-page)
-  * [Future Implementations](#future-implementations)
-  * [Accessibility](#accessibility)
+* [Future Implementations](#future-implementations)
+* [Problems Encountered](#Problems-encountered-and-changes-made)
 
 * [Technologies Used](#technologies-used)
   * [Languages Used](#languages-used)
-  * [Frameworks Used](#frameworks-used)
-  * [Libraries & Packages Used](#libraries--packages-used)
+  * [Frameworks, Libraries and Packages Used](#Frameworks,-Libraries-and-Packages-Used)
   * [Programs Used](#programs-used)
-    * [Movies API](#google-books-api)
-    * [Error Handling](#error-handling)
+  * [Movies API](#Movies-API)
+  * [Error Handling](#error-handling)
   
 
-* [Deployment & Local Development](#deployment--local-development)
+* [Instructions on how to run the app](#Instructions-on-how-to-run-the-app)
   * [Local Development](#local-development)
     * [How to Fork](#how-to-fork)
     * [How to Clone](#how-to-clone)
@@ -55,7 +50,7 @@ Seenit! was created as the group project requirement for the Code First Girls De
 
 #### __Target Audience__
 
-The target audience for Seenit! is...
+The target audience for Seenit! is anyone that enjoys watching movies and would like to search for movies based on genre, decade, keywords or any combinaton of the searches mentioned. Users will also be able to check with movies are currently playing in cinemas. The other target audience for the Seenit! app are people who aimlessly scroll, looking for things to watch on streaming services. Once a search for the movie is done, the user will be able to identify quickly which streming service is currently showing the movie in question.
 
 #### __First Time Visitor__
 
@@ -72,29 +67,17 @@ As a returning user of the site we want to be able to use the app in the same wa
 
 - - -
 
-## Design - CAN REMOVE THIS PART IF NEEDED
-
-### Colour Scheme
-
-We took inspiration from...
-
-### Typography
-
-Google Fonts was used to import the chosen fonts for use in the site.
-
-We used [FONT NAME](https://www.link-to-google-font-if-applicable.com) for the headings on the site. We chose to use this font as...
-
-We used [FONT NAME](https://www.link-to-google-font-if-applicable.com) for the body text on the site. FONT NAME is a sans-serif font which allows it to be legible and is a great choice for accessibility.
+## Design 
 
 ### Imagery
 
 As the site is for people who love to watch movies, we kept the imagery throughout the site to the theme of movies. Please view the media section for more information on where each image was sourced.
 
-All images of the movies have been requested through the MOVIES API.
+All images of the movies have been requested through the [The Movie DB API](https://api.themoviedb.org/3).
 
-### Wireframes - CAN REMOVE IF NOT APPROPRIATE
+### Wireframes
 
-Wireframes were created using NAME.
+Wireframes were created to visualise what the front end would look like for the user.
 
 
 #### __Home Page__
@@ -112,74 +95,50 @@ In future implementations we would like to:
 * Give users the option to delete their account in the profile section.
 * Be able to give showtimes and locations of cinemas for movies showing in theatres.
 
-### Accessibility - THIS CAN BE REMOVED IF NEEDED
-
-The group have been mindful during coding to ensure that the website is as accessible friendly as possible. This has been have achieved by:
-
-* Using semantic HTML.
-* Using descriptive alt attributes on images on the site.
-* Providing information for screen readers where there are icons used and no text.
-* Ensuring that there is a sufficient colour contrast throughout the site.
 
 ### Problems encountered and changes made
 
-The initial brief included the use of a showtimes API to be able to list the cinema listings, times and locations of where the movie is being shown. Unfortunately, after enquiries witht he ASPI provider, due to the project not being classed as 'commercial use', there was a cost invloved with maing API calls.
+The initial brief included the use of a showtimes API to be able to list the cinema listings, times and locations of where the movie is being shown. Unfortunately, after enquiries with the API provider, due to the project not being classed as 'commercial use', there was a cost invloved with having access and making calls to the API.
 
-Due to this issue, we discussed as a group and decided to change the brief slightly. Instead of showing cinema listings...
-
-
+Due to this issue, we discussed as a group and decided to change the brief slightly. Instead of showing cinema listings, it was decided that TMDB API could also be used to show users which streaming service they could use to view the movie that they had searched for.
 
 
-## Technologies Used - THIS WILL NEED EDITING!!!!!!!!
+## Technologies Used
 
 ### Languages Used
 
 HTML, CSS, Javascript, Python
 
-### Frameworks Used
+### Frameworks, Libraries and Packages Used
 
-[Flask](https://pypi.org/project/Flask/) - A micro framework.
+* [Flask](https://pypi.org/project/Flask/) - A micro framework.
 
-[Bootstrap](https://getbootstrap.com/) - version 5.2.0 - CSS Framework.
+* Requests
 
-### Libraries & Packages Used
+* Unittest (Testing framework)
 
-
-### Programs Used - WILL REQUIRE EDITING
+### Programs Used
 
 [Pip](https://pypi.org/project/pip/) - Tool for installing python packages.
-
-[Jinja](https://jinja.palletsprojects.com/en/3.1.x/) - Templating engine.
-
-[Balsamiq](https://balsamiq.com/) - Used to create wireframes.
 
 [Git](https://git-scm.com/) - For version control.
 
 [Github](https://github.com/) - To save and store the files for the website.
 
-[Google Fonts](https://fonts.google.com/) - To import the fonts used on the website.
-
-[Bootstrap Icons](https://icons.getbootstrap.com/) - Version 1.8.3 - For the iconography on the website.
-
 [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) - To troubleshoot and test features, solve issues with responsiveness and styling.
 
-### Movies API - NEEDS EDITING
+### Movies API
 
 We have used the  OVIES API to allow users of the site to search for movie recommendations based on various searches.
 
-We made use of the NAME API [documentation](https://MOVIESAPIWEBSITE.COM) to learn how to fetch data from the API. The documentation also allowed us to amend our request to only fetch the fields we plan to use on the site. This reduces the amount of data returned and will speed up server processing.
+We made use of the [The Movie DB API](https://api.themoviedb.org/3) documentation to learn how to fetch data from the API. The documentation also allowed us to amend our request to only fetch the fields we plan to use on the site. This reduces the amount of data returned and will speed up server processing.
 
-As we am only using the API to search for...  the requests to the API contain the API key, the search term the user has created and the fields that we would like to be returned. We have chosen to only receive the movie title, actors, genre, description and thumbnail of the movie. We have set up the API request to ask for X results as a maximum.
+As we am only using the API to search for...  the requests to the API contain the API key, the search term the user has created and the fields that we would like to be returned. We have chosen to only receive the movie title, genre, description and thumbnail of the movie. We have set up the API request to ask for X results as a maximum.
 
 ### Error Handling - DOES THIS NEED TO BE INCLUDED?
 
 
-## Local Development / Instructions on how to run the app
-
 ### Instructions on how to run the app
-
-Using your IDE (PyCharm) in the Python terminal, the following command is used to install...
-
 
 ### Local Development
 
@@ -213,11 +172,22 @@ To clone the repository:
 
 6. Set up a virtual environment.
 
-7. INSTALLATION PACKAGES COMMANDS NEED TO BE LISTED HERE Install the packages from the requirements.txt file by running the following command in the Terminal:
+7. Install the packages from the requirements.txt file by running the following command in the Terminal:
 
     ```bash
     pip3 install -r requirements.txt
     ```
+OR (instead of 7.):
+
+Using your IDE (PyCharm, or any IDE that you are using) in the Python terminal, type the following commands to install the required packages/modules/libraries to run the app and testing files:
+
+```
+pip install flask
+pip install flask-cors
+pip install requests
+```
+
+In the IDE (Pycharm) - right-click on index.html and navigate to Open in Broswer. 
 
 - - -
 
@@ -232,13 +202,7 @@ To clone the repository:
 
 Content for this project was written by Leah Jones, Dana Ciobotaru, Phoebe Cowan, Ella Rees, Anni Sutt and Delyth Jennings. 
 
-The film descriptions, images, rating and streaming services information were provided through the movie API.
-
-### Media
-***INCLUDE ANY WEBSITES OF IMAGES/CLIPS used here***
-* Named image - [Description](https://www.imagewebsitelink.com)
-* Named image - [Description](https://www.imagewebsitelink.com)
-* Named image - [Description](https://www.imagewebsitelink.com)
+The film descriptions, images, rating and streaming services information were provided through the [The Movie DB API](https://api.themoviedb.org/3).
 
 ### Acknowledgments
 
