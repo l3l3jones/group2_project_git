@@ -232,7 +232,7 @@ class MoviesByDecadeGenreKeyword:
                 providers = movie_providers.get_movie_watch_providers(movie["id"])
                 if providers:
                     movie["providers"] = providers
-
+        print(movies)
         # returning the list of movies that match the criteria
         return movies
 
