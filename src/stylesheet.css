@@ -28,7 +28,7 @@
 .search-container {
     display: flex;
     margin-left: 0px;
-    width: 100%;
+    max-width: 100%;
     justify-content: center;
     align-items: center;
     padding: 20px;
