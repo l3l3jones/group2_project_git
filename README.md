@@ -77,7 +77,7 @@ All images of the movies have been requested through the [The Movie DB API](http
 
 Wireframes were created to visualise what the front-end would look like for the user:
 
-![Landing Page](src/moqup-landing.png)
+![Landing Page](moqup-landing.png)
 
 - - -
 
