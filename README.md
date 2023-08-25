@@ -69,18 +69,15 @@ As a returning user of the site we want to be able to use the app in the same wa
 
 ### Imagery
 
-As the site is for people who love to watch movies, we kept the imagery throughout the site to the theme of movies. Please view the media section for more information on where each image was sourced.
+As the site is for people who love to watch movies, we kept the imagery throughout the site to the theme of movies.
 
 All images of the movies have been requested through the [The Movie DB API](https://api.themoviedb.org/3).
 
 ### Wireframes
 
-Wireframes were created to visualise what the front end would look like for the user.
+Wireframes were created to visualise what the front-end would look like for the user:
 
-
-#### __Home Page__
-
-![Home Page](documentation/wireframes/home.png)
+![Landing Page](src/moqup-landing.png)
 
 - - -
 
