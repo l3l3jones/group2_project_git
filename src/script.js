@@ -59,25 +59,6 @@ function displayMovies(movies) {
         overview.className = 'overview';
 // creating the rating p element
         let rating = document.createElement('p');
-
-  if (movie.providers) {
-        providers = movie.providers
-        providers.forEach(provider => {
-        let provider_div = document.createElement('div')
-        provider_div.id = 'provider-div'
-        let provider_logo = document.createElement('img');
-        provider_logo.src = `https://image.tmdb.org/t/p/w500${provider.logo_path}`;
-        provider_logo.id = 'logo-img'
-        provider_div.appendChild(provider_logo)
-        let provider_title = document.createElement('p')
-        provider_title.textContent = provider.provider_name
-        provider_title.id = 'provider-title'
-        provider_div.append(provider_title)
-        movie_div.append(provider_div)
-      })
-      }
-
-
 // will show 'No reviews yet' if rating is 0
         if (movie.vote_average == 0){
         rating.textContent = 'No reviews yet'
@@ -86,6 +67,30 @@ function displayMovies(movies) {
         rating.textContent = `Rating: ${movie.vote_average.toFixed(1)}/10`;
         }
         movie_div.appendChild(rating);
+
+//if the movie has valid providers a div will be created for each
+  if (movie.providers) {
+        providers = movie.providers
+//looping through the list of providers
+        providers.forEach(provider => {
+        let provider_div = document.createElement('div')
+        provider_div.id = 'provider-div'
+//retrieving the logo image & appending to provider div
+        let provider_logo = document.createElement('img');
+        provider_logo.src = `https://image.tmdb.org/t/p/w500${provider.logo_path}`;
+        provider_logo.id = 'logo-img'
+        provider_div.appendChild(provider_logo)
+//getting the title & appending to provider div
+        let provider_title = document.createElement('p')
+        provider_title.textContent = provider.provider_name
+        provider_title.id = 'provider-title'
+        provider_div.append(provider_title)
+//appending the provider div to the main movie div
+        movie_div.append(provider_div)
+      })
+      }
+
+
 // appending each movie_div to the main container
         movieGrid.appendChild(movie_div);
     });
