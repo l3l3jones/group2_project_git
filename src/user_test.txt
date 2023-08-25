@@ -1,0 +1,47 @@
+Testing Genre Dropdown 
+Scenario: A user wants to see a list of available movie genres.
+Steps:
+  Open the application.
+  Navigate to the genre selection dropdown.
+  Click on the dropdown to view available genres.
+Expected Outcome: The user should be able to see a list of genres in the dropdown.
+
+
+
+Searching by Keyword
+Scenario: A user wants to search for movies based on a keyword.
+Steps:
+   Open the application.
+   Enter a keyword (e.g., "action") in the search bar.
+   Click the "Search" button.
+Expected Outcome: The user should see a list of movies related to the entered keyword.
+
+
+
+Filtering by Genre and Decade
+Scenario: A user wants to filter movies by both genre and decade.
+Steps:
+   Open the application.
+   Select a genre (e.g., "Action") from the genre dropdown.
+   Enter a decade (e.g., "2000") in the decade input field.
+   Click the "Apply Filters" button.
+Expected Outcome: The user should see a list of movies that match both the selected genre and the specified decade.
+
+
+
+Error handling
+Scenario: A user encounters an error while performing an action.
+Steps:
+   Open the application.
+   Perform an action that triggers an error (e.g., searching with an invalid keyword).
+Expected Outcome: The user should receive a clear and informative error message explaining the issue.
+
+
+
+Checking Movie Details
+Scenario: A user wants to view details of a specific movie.
+Steps:
+   Open the application.
+   Search for a specific movie by entering its title in the search bar.
+   Click on the movie title from the search results.
+Expected Outcome: The user should be able to view detailed information about the selected movie.
