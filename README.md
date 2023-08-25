@@ -124,7 +124,7 @@ HTML, CSS, Javascript, Python
 
 ### Movies API
 
-We have used the  OVIES API to allow users of the site to search for movie recommendations based on various searches.
+We have used the  TMDB API to allow users of the site to search for movie recommendations based on various searches.
 
 We made use of the [The Movie DB API](https://api.themoviedb.org/3) documentation to learn how to fetch data from the API. The documentation also allowed us to amend our request to only fetch the fields we plan to use on the site. This reduces the amount of data returned and will speed up server processing.
 
@@ -203,7 +203,7 @@ In the IDE (Pycharm) - right-click on index.html and navigate to Open in Broswer
 
 Content for this project was written by Leah Jones, Dana Ciobotaru, Phoebe Cowan, Ella Rees, Anni Sutt and Delyth Jennings. 
 
-The film descriptions, images, rating and streaming services information were provided through the [The Movie DB API](https://api.themoviedb.org/3).
+The film descriptions, images, rating and streaming services information were provided through the [The Movie DB API](https://api.themoviedb.org/3). The streaming providers, although were accessed through TMDB API, the source of the data came from [JustWatch](https://www.justwatch.com/).
 
 ### Acknowledgments
 
