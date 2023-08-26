@@ -73,7 +73,7 @@ As a returning user of the site we want to be able to use the app in the same wa
 
 The design features bold, primary colours and clean, sleek shapes which are easy on the eye. These should be equally visually appealing in a range of viewing scenarios and devices. 
 
-Integral to the architecture are API integrations, prominently featuring the Internet Movie Database API for comprehensive movie information as well as the ability to view streaming services broadcasting a user-selected film. The recommendation engine employs user preferences to generate precise movie recommendations, displaying clearly and uniformly on the interface. In addition, the key information provided by the external API, each movie displayed on the interface is accompanied by a movie poster, movie name, and movie community rating to inform user choice.
+Integral to the architecture are API integrations, prominently featuring the The Movie Database API for comprehensive movie information as well as the ability to view streaming services broadcasting a user-selected film. The recommendation engine employs user preferences to generate precise movie recommendations, displaying clearly and uniformly on the interface. In addition, the key information provided by the external API, each movie displayed on the interface is accompanied by a movie poster, movie name, and movie community rating to inform user choice.
 
 
 ### Imagery
