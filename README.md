@@ -13,25 +13,27 @@ SEENit! was created as the group project requirement for the Code First Girls De
   * [Wireframes](#wireframes)
 
 * [Future Implementations](#future-implementations)
-* [Problems Encountered](#Problems-encountered-and-changes-made)
+* [Problems Encountered](#problems-encountered-and-changes-made)
 
 * [Technologies Used](#technologies-used)
   * [Languages Used](#languages-used)
-  * [Frameworks, Libraries and Packages Used](#Frameworks,-Libraries-and-Packages-Used)
+  * [Frameworks, Libraries and Packages Used](#frameworks,-libraries-and-packages-used)
   * [Programs Used](#programs-used)
   * [Movies API](#Movies-API)
   
-* [Instructions on how to run the app](#Instructions-on-how-to-run-the-app)
+* [Instructions on how to run the app](#instructions-on-how-to-run-the-app)
   * [Local Development](#local-development)
     * [How to Fork](#how-to-fork)
     * [How to Clone](#how-to-clone)
+    * [Installng Packages/Modules/Libraries](#installng-packages/podules/pibraries)
+    * [App Set-up](#App-Set-up)
+    * [API Keys](#api-keys)
+    * [Running the app](#running-the-app)
 
 * [Testing](#testing)
   
 * [Credits](#credits)
-  * [Code Used](#code-used)
   * [Content](#content)
-  * [Media](#media)
   * [Acknowledgments](#acknowledgments)
 
 - - -
