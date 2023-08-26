@@ -4,6 +4,7 @@ from utils import Genres, NowPlaying, valid_movie, MoviesByDecadeGenreKeyword  #
 
 
 # 1. Unit tests for get_genres function
+# Tests whether the get_genres method of the Genres class behaves correctly.
 class TestGetGenres(unittest.TestCase):
 
     @patch('utils.requests.get')
@@ -15,14 +16,18 @@ class TestGetGenres(unittest.TestCase):
 
         genres_instance = Genres()  # Create an instance of the Genres class
         genres = genres_instance.get_genres()  # Call the function
-
+        # Assertions
         self.assertEqual(len(genres), 1)
         self.assertEqual(genres[0]['name'], "Action")
 
+    # Checks whether the get_genres method behaves correctly when the JSON response from the mocked HTTP request does
+    # not contain the "genres" key. Ensures method handles returning None.
     @patch('utils.requests.get')
     def test_missing_genres_key(self, mock_get):
         # Mock the requests.get function to return a response without 'genres' key
         mock_response = Mock()
+        # Mock response contains the "other_key" and not the "genres" key to simulate
+        # scenario where genre is absent
         mock_response.json.return_value = {"other_key": "value"}
         mock_get.return_value = mock_response
 
@@ -30,10 +35,13 @@ class TestGetGenres(unittest.TestCase):
         genres = genres_instance.get_genres()
         self.assertIsNone(genres)
 
+    # Test the get_genres function when the requests.get function raises an exception
     @patch('utils.requests.get', side_effect=Exception('Test error'))
     def test_request_exception(self, mock_get):
         # Mock the requests.get function to raise an exception
         genres_instance = Genres()
+
+        # Assertions
         with self.assertRaises(Exception):
             genres_instance.get_genres()
 
@@ -80,39 +88,55 @@ class TestValidMovie(unittest.TestCase):
             "release_date": "2022-05-15",
             "genre_ids": [28, 12, 16]
         }
+        # Define the acceptable range of release years and the desired genre.
         start_year = 2020
         end_year = 2025
         genre = 12
 
+        # Check if the given movie meets the specified criteria (release year and genre).
         result = valid_movie(movie, start_year, end_year, genre)
+        # Assert that the result is True, indicating that the movie is valid according to the criteria.
         self.assertTrue(result)
 
+    # Validates that the valid_movie function correctly identifies a movie as invalid when its release
+    # year is outside the specified acceptable range.
     def test_valid_movie_with_invalid_year(self):
+        # Create a sample movie dictionary with attributes that include an older release year.
         movie = {
             "poster_path": "/example_poster.jpg",
-            "release_date": "2018-09-20",
+            "release_date": "2018-09-20",  # Example: Release date is in 2018.
             "genre_ids": [28, 12, 16]
         }
+        # Define the acceptable range of release years and the desired genre.
         start_year = 2020
         end_year = 2025
         genre = 12
-
+        # Call the valid_movie function
         result = valid_movie(movie, start_year, end_year, genre)
+        # Assert that the result is False - movie has an invalid release year.
         self.assertFalse(result)
 
+    #  Test to ensure valid_movie function correctly identifies a movie as invalid
+    #  when genre does not match the specified desired genre.
     def test_valid_movie_with_invalid_genre(self):
+        # Create a sample movie dictionary
         movie = {
             "poster_path": "/example_poster.jpg",
             "release_date": "2022-03-10",
             "genre_ids": [28, 16]
         }
+        # Define the acceptable range of release years and genres
         start_year = 2020
         end_year = 2025
         genre = 12
 
+        # Call the valid_movie function
         result = valid_movie(movie, start_year, end_year, genre)
+        # Assert that the result is False - movie has an invalid genre id.
         self.assertFalse(result)
 
+    # Test to verify that the valid_movie function appropriately raises a KeyError when
+    # trying to access a missing "poster_path" key.
     def test_valid_movie_without_poster(self):
         movie = {
             "release_date": "2022-08-30",
@@ -151,11 +175,11 @@ class TestMoviesByDecadeGenreKeyword(unittest.TestCase):
         self.assertEqual(len(result), 100)
 
 # EDGE CASES TESTS for the MoviesByDecadeGenreKeyword Class
-# 1. Tests the behaviour when the API returns no movies
 
 
 class TestNoMoviesReturnedByAPI(unittest.TestCase):
 
+    # 1. Tests the behaviour when the API returns no movies
     @patch('utils.requests.get')
     def test_no_movies_returned(self, mock_get):
         # Prepare mock response with no movies
