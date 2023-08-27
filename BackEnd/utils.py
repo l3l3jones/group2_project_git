@@ -3,7 +3,7 @@ from flask import jsonify
 
 
 # IMPORTANT please enter a valid TMDB API key below, this is only an example key, it will not work
-API_KEY = "eb7191390acbcface8cf637d866e443c"
+API_KEY = "please_enter_api_key_here"
 BASE_URL = "https://api.themoviedb.org/3"
 
 
