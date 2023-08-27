@@ -1,13 +1,13 @@
 import unittest
 from unittest.mock import Mock, MagicMock, patch
-from utils import Genres, NowPlaying, valid_movie, MoviesByDecadeGenreKeyword  # Import classes from the utils module
+from BackEnd.utils import Genres, NowPlaying, valid_movie, MoviesByDecadeGenreKeyword  # Import classes from the utils module
 
 
 # 1. Unit tests for get_genres function
 # Tests whether the get_genres method of the Genres class behaves correctly.
 class TestGetGenres(unittest.TestCase):
 
-    @patch('utils.requests.get')
+    @patch('BackEnd.utils.requests.get')
     def test_successful_request(self, mock_get):
         # Mock the requests.get function to return a successful response
         mock_response = Mock()
@@ -22,7 +22,7 @@ class TestGetGenres(unittest.TestCase):
 
     # Checks whether the get_genres method behaves correctly when the JSON response from the mocked HTTP request does
     # not contain the "genres" key. Ensures method handles returning None.
-    @patch('utils.requests.get')
+    @patch('BackEnd.utils.requests.get')
     def test_missing_genres_key(self, mock_get):
         # Mock the requests.get function to return a response without 'genres' key
         mock_response = Mock()
@@ -36,7 +36,7 @@ class TestGetGenres(unittest.TestCase):
         self.assertIsNone(genres)
 
     # Test the get_genres function when the requests.get function raises an exception
-    @patch('utils.requests.get', side_effect=Exception('Test error'))
+    @patch('BackEnd.utils.requests.get', side_effect=Exception('Test error'))
     def test_request_exception(self, mock_get):
         # Mock the requests.get function to raise an exception
         genres_instance = Genres()
@@ -49,7 +49,7 @@ class TestGetGenres(unittest.TestCase):
 # 2. Unit tests for get_now_playing function
 class TestNowPlaying(unittest.TestCase):
 
-    @patch('utils.requests.get')
+    @patch('BackEnd.utils.requests.get')
     def test_get_now_playing(self, mock_get):
         # Create a mock response with sample movie data
         mock_response = Mock()
@@ -154,7 +154,7 @@ class TestValidMovie(unittest.TestCase):
 # 4. Unit tests for MoviesByDecadeGenreKeyword class functions
 class TestMoviesByDecadeGenreKeyword(unittest.TestCase):
 
-    @patch('utils.requests.get')
+    @patch('BackEnd.utils.requests.get')
     def test_get_now_playing_with_search(self, mock_get):
         # Prepare mock response with multiple pages of results
         mock_response = MagicMock()
@@ -180,7 +180,7 @@ class TestMoviesByDecadeGenreKeyword(unittest.TestCase):
 class TestNoMoviesReturnedByAPI(unittest.TestCase):
 
     # 1. Tests the behaviour when the API returns no movies
-    @patch('utils.requests.get')
+    @patch('BackEnd.utils.requests.get')
     def test_no_movies_returned(self, mock_get):
         # Prepare mock response with no movies
         mock_response = MagicMock()
@@ -197,7 +197,7 @@ class TestNoMoviesReturnedByAPI(unittest.TestCase):
 
 # 2. Test for Edge Case: Invalid keyword search
 
-    @patch('utils.requests.get')
+    @patch('BackEnd.utils.requests.get')
     def test_invalid_keyword(self, mock_get):
         # Prepare mock response with no movies
         mock_response = MagicMock()

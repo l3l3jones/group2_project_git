@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 import requests
-from utils import (
+from BackEnd.utils import (
     MoviesByGenre,
     MoviesByDecadeGenreKeyword,
     Genres,
@@ -11,8 +11,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 cors = CORS(app)
 
-#  We should put api_key in dev environment variable so not everyone has access
-
+# IMPORTANT please enter a valid TMDB API key below, this is only an example key, it will not work
 API_KEY = "eb7191390acbcface8cf637d866e443c"
 
 
@@ -72,7 +71,7 @@ def discover_movies_by_genre():
 @app.route("/loading_page")
 def get_now_playing_movies():
     url = f"https://api.themoviedb.org/3/movie/now_playing"
-    params = {"api_key": API_KEY, "language": "en-GB", "page": 1, "region": "GB"}
+    params = {"api_key": API_KEY, "language": "en-GB", "page": 3, "region": "GB"}
 
     # calling the moviedb api for movies playing in UK cinemas, 1 page only for the landing page
     try:
@@ -82,18 +81,6 @@ def get_now_playing_movies():
     # handling any request related errors
     except requests.exceptions.RequestException as e:
         print(f"Error: Unable to establish a connection to the API: {e}")
-
-    # creating new Genres class
-    genres_instance = Genres()
-    genres = genres_instance.get_genres()
-
-    # appending the names of genre id's to the movie["genre_names"] in case we want to display them on FE
-    for movie in data["results"]:
-        g = []
-        for genre in genres:
-            if genre["id"] in movie["genre_ids"]:
-                g.append(genre["name"])
-        movie["genre_names"] = g
 
     # transforming the data in a nice movie format
     movie_data = extract_movie_data(data)
@@ -121,6 +108,8 @@ def search_movies_by_decade_genre():
     # raising exception that catches ValueError for invalid data formats/ type conversion
     except ValueError as e:
         return jsonify(error=str(e)), 400
+    except Exception as e:
+        return jsonify(error=str(e)), 500
 
     # this catches any request-related exceptions
     except requests.RequestException as e:

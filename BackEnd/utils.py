@@ -1,6 +1,8 @@
 import requests
+from flask import jsonify
 
-# we should hide API key
+
+# IMPORTANT please enter a valid TMDB API key below, this is only an example key, it will not work
 API_KEY = "eb7191390acbcface8cf637d866e443c"
 BASE_URL = "https://api.themoviedb.org/3"
 
@@ -64,9 +66,14 @@ def extract_movie_data(data):
     movies = []
     genders_instance = Genres()
     genres = genders_instance.get_genres()
-
+    if genres is None:
+        genres = []
+    if not data or "results" not in data:
+        return []
     for movie in data["results"]:
         try:
+            movie_genre_ids = movie.get("genre_ids", [])
+
             movies.append(
                 {
                     "title": movie["title"],
@@ -77,7 +84,7 @@ def extract_movie_data(data):
                     "genres": [
                         genre["name"]
                         for genre in genres
-                        if genre["id"] in movie["genre_ids"]
+                        if genre["id"] in movie_genre_ids
                     ],
                 }
             )
@@ -113,10 +120,11 @@ class MoviesByGenre:
 
             # error message if the get request fails
             except requests.exceptions.RequestException as e:
-                print(f"An error occured while trying to fetch movies: {e}")
+                print(f"An error occurred while trying to fetch movies: {e}")
+                return {"error": f"An error occurred: {e}"}
 
         # in case a decade is chosen, the movies are filtered by decade;
-        # the decade parameter defalts to None if decade not chosen
+        # the decade parameter defaults to None if decade not chosen
         if decade:
             try:
                 start_year = int(decade)
@@ -124,7 +132,7 @@ class MoviesByGenre:
                 movies = [
                     movie
                     for movie in movies
-                    if int(movie["release_date"].split("-")[0])
+                    if "release_date" in movie and int(movie["release_date"].split("-")[0])
                        in range(start_year, end_year + 1)
                 ]
 
@@ -134,6 +142,8 @@ class MoviesByGenre:
 
         # Instantiate MovieProviders class
         movie_providers = MovieProviders()
+
+        providers = None
 
         if movies:
             for movie in movies:
@@ -227,13 +237,14 @@ class MoviesByDecadeGenreKeyword:
             try:
                 s_year = int(decade)
                 e_year = s_year + 9
-            except ValueError:
-                print(f"Error converting decade '{decade}' to integer")
+
+            except ValueError as e:
+                return jsonify(error=str(e)), 400
         else:
             s_year = e_year = None
 
         # checking that the movie has a poster, filtering the movies if a decade or genre was chosen
-        if decade or genre:
+        if genre or decade:
             filtered_nowplaying_movies = [
                 movie
                 for movie in filtered_nowplaying_movies
@@ -270,6 +281,7 @@ class MoviesByDecadeGenreKeyword:
                 e_year = s_year + 9
             except ValueError as e:
                 print(f"Error converting decade '{decade}' to integer")
+                return jsonify(error="Invalid decade"), 400
         # if decade not provided, setting the start& end year to None
         else:
             s_year = e_year = None
@@ -317,9 +329,9 @@ class MovieProviders:
             data = response.json()
             # get the providers for GB
             gb_providers = data.get("results", {}).get("GB", {})
-            # return "flatrate", which is just streaming (apparently), where the display priority is less than 12
+            # return "buy" option, where the display priority is less than 12
             # These are the more well-know providers
-            filtered_providers = [provider for provider in gb_providers.get("flatrate", []) if
+            filtered_providers = [provider for provider in gb_providers.get("buy", []) if
                                   provider.get("display_priority", 0) < 12]
             return filtered_providers
 

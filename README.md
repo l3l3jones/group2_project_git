@@ -1,4 +1,4 @@
-![Welcome to Seenit!](src/logopic.jpg)
+![Welcome to Seenit!](FrontEnd/logopic.jpg)
 
 Seenit! was created as the group project requirement for the Code First Girls Degree - Summer 2023 Software Stream Cohort.
 

@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function(){
     .then(response => response.json())
     .then(movies => {
         displayMovies(movies);
+        console.log(movies)
     })
 //error handling
     .catch(error => console.error('Error getting movies:', error));
