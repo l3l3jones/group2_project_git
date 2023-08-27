@@ -1,4 +1,6 @@
-![Welcome to SEENit!](src/logopic.jpg)
+
+![Welcome to Seenit!](FrontEnd/logopic.jpg)
+
 
 SEENit! was created as the group project requirement for the Code First Girls Degree - Summer 2023 Software Stream Cohort.
 
@@ -97,9 +99,11 @@ In future implementations we would like to:
 * Create user profiles so that data and movie recommendations can be saved.
 * Add, change and reset password functionality to the profile section.
 * Give users the option to delete their account in the profile section.
-* Store user profiles in a relational database.
-* Display showtimes and locations of cinemas for movies showing in theatres.
-* Give users the ability to create watchlists.
+* Be able to give showtimes and locations of cinemas for movies showing in theatres.
+* Allow users to write reviews and rate movies.
+* Users would be able to create watch lists or mark movies as their favourites.
+* Give users the option to filter or sort the returned results based on ratings, released dates and popularity.
+
 
 
 ### Problems encountered and changes made to initial brief
