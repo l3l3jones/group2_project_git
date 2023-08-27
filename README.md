@@ -89,6 +89,9 @@ In future implementations we would like to:
 * Add change and reset password functionality to the profile section.
 * Give users the option to delete their account in the profile section.
 * Be able to give showtimes and locations of cinemas for movies showing in theatres.
+* Allow users to write reviews and rate movies.
+* Users would be able to create watch lists or mark movies as their favourites.
+* Give users the option to filter or sort the returned results based on ratings, released dates and popularity.
 
 
 ### Problems encountered and changes made
