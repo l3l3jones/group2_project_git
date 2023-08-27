@@ -12,7 +12,7 @@ app = Flask(__name__)
 cors = CORS(app)
 
 # IMPORTANT please enter a valid TMDB API key below, this is only an example key, it will not work
-API_KEY = "eb7191390acbcface8cf637d866e443c"
+API_KEY = ""please_enter_api_key_here""
 
 
 # using flask decorator to handle Not Found Errors and return a JSON response
