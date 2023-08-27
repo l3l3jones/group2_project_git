@@ -1,6 +1,8 @@
+
 ![Welcome to Seenit!](FrontEnd/logopic.jpg)
 
-Seenit! was created as the group project requirement for the Code First Girls Degree - Summer 2023 Software Stream Cohort.
+
+SEENit! was created as the group project requirement for the Code First Girls Degree - Summer 2023 Software Stream Cohort.
 
 ## CONTENTS
 
@@ -13,27 +15,27 @@ Seenit! was created as the group project requirement for the Code First Girls De
   * [Wireframes](#wireframes)
 
 * [Future Implementations](#future-implementations)
-* [Problems Encountered](#Problems-encountered-and-changes-made)
+* [Problems Encountered](#problems-encountered-and-changes-made)
 
 * [Technologies Used](#technologies-used)
   * [Languages Used](#languages-used)
-  * [Frameworks, Libraries and Packages Used](#Frameworks,-Libraries-and-Packages-Used)
+  * [Frameworks, Libraries and Packages Used](#frameworks,-libraries-and-packages-used)
   * [Programs Used](#programs-used)
   * [Movies API](#Movies-API)
-  * [Error Handling](#error-handling)
   
-
-* [Instructions on how to run the app](#Instructions-on-how-to-run-the-app)
+* [Instructions on how to run the app](#instructions-on-how-to-run-the-app)
   * [Local Development](#local-development)
     * [How to Fork](#how-to-fork)
     * [How to Clone](#how-to-clone)
+    * [Installng Packages/Modules/Libraries](#installng-packages/podules/pibraries)
+    * [App Set-up](#App-Set-up)
+    * [API Keys](#api-keys)
+    * [Running the app](#running-the-app)
 
 * [Testing](#testing)
   
 * [Credits](#credits)
-  * [Code Used](#code-used)
   * [Content](#content)
-  * [Media](#media)
   * [Acknowledgments](#acknowledgments)
 
 - - -
@@ -42,7 +44,11 @@ Seenit! was created as the group project requirement for the Code First Girls De
 
 ### Project Goals
 
-***Brief outline here***
+The primary goal of SEENit! Is to simplify the movie-watching experience for users by aiming to make the process of finding and watching films more enjoyable and efficient. 
+
+The project’s objective is to provide users with a personalised recommendation based on user preferences. This feature limits the amount of scrolling and indecisiveness by presenting the user with options that align with their interests. 
+
+The project aims to offer an effective movie search mechanism, allowing users to find movies based on categories such as; genres, actors, keywords. This helps users to quickly narrow down their choice of films depending on what they’re in the mood for.
 
 ### User Stories
 
@@ -65,7 +71,12 @@ As a returning user of the site we want to be able to use the app in the same wa
 
 - - -
 
-## Design 
+## Design
+
+The design features bold, primary colours and clean, sleek shapes which are easy on the eye. These should be equally visually appealing in a range of viewing scenarios and devices. 
+
+Integral to the architecture are API integrations, prominently featuring the Internet Movie Database API for comprehensive movie information as well as the ability to view streaming services broadcasting a user-selected film. The recommendation engine employs user preferences to generate precise movie recommendations, displaying clearly and uniformly on the interface. In addition, the key information provided by the external API, each movie displayed on the interface is accompanied by a movie poster, movie name, and movie community rating to inform user choice.
+
 
 ### Imagery
 
@@ -85,8 +96,8 @@ Wireframes were created to visualise what the front-end would look like for the 
 
 In future implementations we would like to:
 
-* Be able to create user profiles so that data and movie recommendations can be saved.
-* Add change and reset password functionality to the profile section.
+* Create user profiles so that data and movie recommendations can be saved.
+* Add, change and reset password functionality to the profile section.
 * Give users the option to delete their account in the profile section.
 * Be able to give showtimes and locations of cinemas for movies showing in theatres.
 * Allow users to write reviews and rate movies.
@@ -94,7 +105,8 @@ In future implementations we would like to:
 * Give users the option to filter or sort the returned results based on ratings, released dates and popularity.
 
 
-### Problems encountered and changes made
+
+### Problems encountered and changes made to initial brief
 
 The initial brief included the use of a showtimes API to be able to list the cinema listings, times and locations of where the movie is being shown. Unfortunately, after enquiries with the API provider, due to the project not being classed as 'commercial use', there was a cost invloved with having access and making calls to the API.
 
@@ -127,14 +139,11 @@ HTML, CSS, Javascript, Python
 
 ### Movies API
 
-We have used the  TMDB API to allow users of the site to search for movie recommendations based on various searches.
+We have used the TMDB API to allow users of the site to search for movie recommendations based on various searches.
 
 We made use of the [The Movie DB API](https://api.themoviedb.org/3) documentation to learn how to fetch data from the API. The documentation also allowed us to amend our request to only fetch the fields we plan to use on the site. This reduces the amount of data returned and will speed up server processing.
 
-As we am only using the API to search for...  the requests to the API contain the API key, the search term the user has created and the fields that we would like to be returned. We have chosen to only receive the movie title, genre, description and thumbnail of the movie. We have set up the API request to ask for X results as a maximum.
-
-### Error Handling - DOES THIS NEED TO BE INCLUDED?
-
+As we are only using the API to search for the requests to the API contain the API key, the search term the user has created and the fields that we would like to be returned. We have chosen to only receive the movie title, genre, description and thumbnail of the movie. 
 
 ### Instructions on how to run the app
 
@@ -168,36 +177,73 @@ To clone the repository:
     git clone { & THE LINK FROM STEP 3 }
     ```
 
-6. Set up a virtual environment.
+### Installng Packages/Modules/Libraries
 
-7. Install the packages from the requirements.txt file by running the following command in the Terminal (use pip insread of pip 3 if running Python 2):
+You can install the packages required in two ways. 
+
+1. Install the packages from the requirements.txt file by running the following command in the Terminal:
 
     ```bash
     pip3 install -r requirements.txt
     ```
-OR (instead of 7.):
+  If you are running a different version of Python, you can use pip instead of pip3.
 
-Using your IDE (PyCharm, or any IDE that you are using) in the Python terminal, type the following commands to install the required packages/modules/libraries to run the app and testing files:
+OR:
+
+2. Using your IDE (PyCharm, or your preferred IDE) - in the Python terminal, type the following commands to install the required packages/modules/libraries individually to run the app:
 
 ```
 pip install flask
 pip install flask-cors
 pip install requests
+pip install jsonify
 ```
-If you are running Python 3 then type int he folloing commands instead:
+If you are running different version of Python, you may need to run the followiing commands instead:
+
 ```
 pip3 install flask
 pip3 install flask-cors
 pip3 install requests
+pip3 install jsonify
 ```
 
-In the IDE (Pycharm) - right-click on index.html and navigate to Open in Broswer. 
+### App Set-up
+
+### API Keys
+Due to the use of an API, API keys are required to run the app. You can do this by going through the following steps:
+-  1. Create an account by signing up at the [TMDb website](https://www.themoviedb.org/).
+-  2. Log in and navigate to account settings.
+-  3. In your account settings, go to the API section and click on the link to request an API Key.
+-  4. Provide information regarding how you plan to use the API.
+-  5. After agreeing to their T&Cs, generate the API Key.
+-  6. The API key will then need to be inputted into the code at the top of the app.py and the utils.py files:
+```
+API_KEY = "your_api_key_will_go_here"
+```
+### Running the app
+
+In the IDE (Pycharm):
+
+1. Run the app.py file (this can be done by right-clicking the app.py file and select 'Run', or by clicking the green 'Run' button).
+
+If you wish to run the app from the terminal, use the following command (you may need to use python3 depending of the version of Python installed):
+
+```
+python -m BackEnd.app
+```
+
+2. Once the app is running, right-click on index.html and navigate to Open in Broswer (it can run as a preview in PyCharm if you so wish). 
 
 - - -
 
 ## Testing
 
+Information regarding testing can be found in the project documentation. To run the tests from the terminal, the following command should be used (you may need to use python3 depending of the version of Python installed):
 
+```
+python -m unittest discover -v
+
+```
 - - -
 
 ## Credits
@@ -206,7 +252,7 @@ In the IDE (Pycharm) - right-click on index.html and navigate to Open in Broswer
 
 Content for this project was written by Leah Jones, Dana Ciobotaru, Phoebe Cowan, Ella Rees, Anni Sutt and Delyth Jennings. 
 
-The film descriptions, images, rating and streaming services information were provided through the [The Movie DB API](https://api.themoviedb.org/3). The streaming providers, although were accessed through TMDB API, the source of the data came from [JustWatch](https://www.justwatch.com/).
+The film descriptions, images, rating and streaming services information were provided through the [The Movie DB API](https://api.themoviedb.org/3).
 
 ### Acknowledgments
 
