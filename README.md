@@ -73,7 +73,7 @@ As a returning user of the site we want to be able to use the app in the same wa
 
 The design features bold, primary colours and clean, sleek shapes which are easy on the eye. These should be equally visually appealing in a range of viewing scenarios and devices. 
 
-Integral to the architecture are API integrations, prominently featuring the The Movie Database API for comprehensive movie information as well as the ability to view streaming services broadcasting a user-selected film. The recommendation engine employs user preferences to generate precise movie recommendations, displaying clearly and uniformly on the interface. In addition, the key information provided by the external API, each movie displayed on the interface is accompanied by a movie poster, movie name, and movie community rating to inform user choice.
+Integral to the architecture are API integrations, prominently featuring the Internet Movie Database API for comprehensive movie information as well as the ability to view streaming services broadcasting a user-selected film. The recommendation engine employs user preferences to generate precise movie recommendations, displaying clearly and uniformly on the interface. In addition, the key information provided by the external API, each movie displayed on the interface is accompanied by a movie poster, movie name, and movie community rating to inform user choice.
 
 
 ### Imagery
@@ -182,7 +182,7 @@ You can install the packages required in two ways.
     ```bash
     pip3 install -r requirements.txt
     ```
-  If you are running a different version of Pythond, you can use pip instead of pip3.
+  If you are running a different version of Python, you can use pip instead of pip3.
 
 OR:
 
@@ -222,14 +222,24 @@ In the IDE (Pycharm):
 
 1. Run the app.py file (this can be done by right-clicking the app.py file and select 'Run', or by clicking the green 'Run' button).
 
+If you wish to run the app from the terminal, use the following command (you may need to use python3 depending of the version of Python installed):
+
+```
+python -m BackEnd.app
+```
+
 2. Once the app is running, right-click on index.html and navigate to Open in Broswer (it can run as a preview in PyCharm if you so wish). 
 
 - - -
 
 ## Testing
 
-Information regarding testing can be found in the project documentation.
+Information regarding testing can be found in the project documentation. To run the tests from the terminal, the following command should be used (you may need to use python3 depending of the version of Python installed):
 
+```
+python -m unittest discover -v
+
+```
 - - -
 
 ## Credits
